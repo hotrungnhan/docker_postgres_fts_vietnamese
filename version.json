@@ -7,7 +7,7 @@
         ],
         "platform": [
             "linux/amd64",
-            "linux/amd64"
+            "linux/arm64"
         ]
     },
     "14-alpine": {
@@ -16,7 +16,7 @@
         ],
         "platform": [
             "linux/amd64",
-            "linux/amd64"
+            "linux/arm64"
         ]
     },
     "15-bullseye": {
@@ -27,7 +27,7 @@
         ],
         "platform": [
             "linux/amd64",
-            "linux/amd64"
+            "linux/arm64"
         ]
     },
     "14-bullseye": {
@@ -36,7 +36,7 @@
         ],
         "platform": [
             "linux/amd64",
-            "linux/amd64"
+            "linux/arm64"
         ]
     }
 }

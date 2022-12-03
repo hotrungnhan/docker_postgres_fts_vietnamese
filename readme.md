@@ -2,7 +2,7 @@
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hotrungnhan/docker_postgres_fts_vietnamese)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/repository/docker/hotrungnhan/postgres)
 
-Please open github
+Please open github readme to have the latest guideline
 # Vietnamese Full Text Search Dictionary for Postgres
 Base on [postgres image](https://hub.docker.com/_/postgres). As an consequence, fts-image will share the same config and enviroment with postgres image.
 # Getting Started 
@@ -25,6 +25,25 @@ ALTER MAPPING FOR asciiword, word, numword, asciihword, hword,numhword, hword_as
 WITH vietnamese;
 ```
 
+## For builder
+### Login docker
+```bash
+docker login
+```
+### Build 
+#### Variable 
+
+> Due to knowledge limited on writing bash script ==)) we'll need install [Nodejs](https://nodejs.org/en/) first, Hope somebody else could help me on this. You are welcome to push an PR.
+
+Then
+
+> change `IMAGE_REPOSITORY` in upgrade.js to your repository
+>
+And
+```bash
+./run.sh
+```
+> Notes: builder will be auto create cross-platform-builder if not existed
 
 # Reference
 ### Stop Word
