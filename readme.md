@@ -2,9 +2,12 @@
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hotrungnhan/docker_postgres_fts_vietnamese)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/repository/docker/hotrungnhan/postgres)
 
+Please open github
 # Vietnamese Full Text Search Dictionary for Postgres
-# Guide 
+Base on [postgres image](https://hub.docker.com/_/postgres). As an consequence, fts-image will share the same config and enviroment with postgres image.
+# Getting Started 
 ## Installation
+Docker image will share the same environment with postgres
 ```docker
 docker run hotrungnhan/postgres:alpine
 ```
