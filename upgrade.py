@@ -5,7 +5,7 @@ def read_json(filepath):
         return json.load(f)
 
 
-
+print(f"echo '🏃 running builder'")
 ### environent
 IMAGE_REPOSITORY = 'hotrungnhan/postgres'
 FTS_VERSION=read_json("./fts-version.json")[-1]["version"]
@@ -19,5 +19,4 @@ for [key,value] in read_json('./version.json').items():
     tags= " ".join(tags)
 
     print(f"docker buildx build --build-arg POSTGRES_VERSION={key} --build-arg FTS_VERSION={FTS_VERSION} {platform} {tags} --push .")
-
-
+print(f"echo '✅ done check it out at: https://hub.docker.com/repository/docker/{IMAGE_REPOSITORY}'")

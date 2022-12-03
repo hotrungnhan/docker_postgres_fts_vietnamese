@@ -5,6 +5,4 @@ then
     docker buildx create --name cross-platform-builder  --driver=docker-container
     echo "✅ created cross-platform-builder"
 fi
-echo "🏃 running builder"
 python3 upgrade.py | bash
-echo "✅ done checkout it out at: https://hub.docker.com/repository/docker/hotrungnhan/postgres"
