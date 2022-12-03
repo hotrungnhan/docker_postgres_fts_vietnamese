@@ -1,0 +1,42 @@
+{
+    "15-alpine": {
+        "tag": [
+            "15-alpine",
+            "latest-bullseye",
+            "latest"
+        ],
+        "platform": [
+            "linux/amd64",
+            "linux/amd64"
+        ]
+    },
+    "14-alpine": {
+        "tag": [
+            "14-alpine"
+        ],
+        "platform": [
+            "linux/amd64",
+            "linux/amd64"
+        ]
+    },
+    "15-bullseye": {
+        "tag": [
+            "15-bullseye",
+            "latest-bullseye",
+            "latest"
+        ],
+        "platform": [
+            "linux/amd64",
+            "linux/amd64"
+        ]
+    },
+    "14-bullseye": {
+        "tag": [
+            "14-bullseye"
+        ],
+        "platform": [
+            "linux/amd64",
+            "linux/amd64"
+        ]
+    }
+}
