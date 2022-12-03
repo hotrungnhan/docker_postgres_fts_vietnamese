@@ -6,8 +6,7 @@
 # Guide 
 ## Installation
 ```docker
-docker run hotrungnhan/postgres:tagname
-
+docker run hotrungnhan/postgres:alpine
 ```
 Install full text search dictionary via run sql in database
 ```sql

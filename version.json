@@ -2,7 +2,7 @@
     "15-alpine": {
         "tag": [
             "15-alpine",
-            "latest-bullseye",
+            "alpine",
             "latest"
         ],
         "platform": [
@@ -22,7 +22,7 @@
     "15-bullseye": {
         "tag": [
             "15-bullseye",
-            "latest-bullseye",
+            "bullseye",
             "latest"
         ],
         "platform": [
