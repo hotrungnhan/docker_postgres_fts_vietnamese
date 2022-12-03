@@ -37,13 +37,8 @@ WITH vietnamese;
 docker login
 ```
 ### Build 
-#### Variable 
 
-> Due to knowledge limited on writing bash script ==)) we'll need install [Nodejs](https://nodejs.org/en/) first, Hope somebody else could help me on this. You are welcome to push an PR.
-
-Then
-
-> change `IMAGE_REPOSITORY` in upgrade.js to your repository
+> change `IMAGE_REPOSITORY` in upgrade.py to your repository
 >
 And
 ```bash

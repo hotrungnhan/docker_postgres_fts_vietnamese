@@ -6,6 +6,5 @@ then
     echo "✅ created cross-platform-builder"
 fi
 echo "🏃 running builder"
-export POSTGRES_VERSION=14-alpine
-node upgrade.js | bash
+python3 upgrade.py | bash
 echo "✅ done checkout it out at: https://hub.docker.com/repository/docker/hotrungnhan/postgres"
