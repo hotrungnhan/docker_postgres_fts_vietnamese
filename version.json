@@ -22,8 +22,7 @@
     "15-bullseye": {
         "tag": [
             "15-bullseye",
-            "bullseye",
-            "latest"
+            "bullseye"
         ],
         "platform": [
             "linux/amd64",

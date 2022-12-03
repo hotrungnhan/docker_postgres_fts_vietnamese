@@ -2,9 +2,15 @@
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hotrungnhan/docker_postgres_fts_vietnamese)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/repository/docker/hotrungnhan/postgres)
 
-Please open github readme to have the latest guideline
+
+Make Vietnamese Great Again !!!
 # Vietnamese Full Text Search Dictionary for Postgres
-Base on [postgres image](https://hub.docker.com/_/postgres). As an consequence, fts-image will share the same config and enviroment with postgres image.
+Due to lack of FTS support for vietnamese in postgres. I've make this project to archive it with by collect all the dictionary in the internet, prebuild it for fastest usage.
+
+For more this image is base on [postgres image](https://hub.docker.com/_/postgres). As an consequence, fts-image will share the same config and enviroment with postgres, as well.
+
+
+> If you are in docker hub, open github to read the latest guideline
 # Getting Started 
 ## Installation
 Docker image will share the same environment with postgres
