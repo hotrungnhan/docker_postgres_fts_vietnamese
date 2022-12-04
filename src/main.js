@@ -44,15 +44,15 @@ async function processStopword() {
   const vn_stopwords = vietnamese.split('\n').map((w) => w.toLowerCase());
   const eng_stop = eng.split('\n').map(w => w.toLowerCase());
   const stopword = vn_stopwords.concat(eng_stop);
-  const unaccent = stopword
-  const accent = stopword.map(w => removeVietnameseTones(w))
+  const accent = stopword
+  const unaccent = stopword.map(w => removeVietnameseTones(w))
   await writeFile(
     path.join(__dirname, "..", "dist", 'vietnamese_accent.stop'),
     Array.from(new Set(accent)).sort().join('\n'),
   );
   await writeFile(
     path.join(__dirname, "..", "dist", 'vietnamese_unaccent.stop'),
-    Array.from(new Set(accent)).sort().join('\n'),
+    Array.from(new Set(unaccent)).sort().join('\n'),
   );
   await writeFile(
     path.join(__dirname, "..", "dist", 'vietnamese.stop'),
@@ -72,8 +72,8 @@ async function processDict() {
   const tudientvw = tudientv.split("\n").map(w => JSON.parse(w).text.toLowerCase());
 
   const words = hunspellw.concat(tudientvw);
-  const unaccent = words
-  const accent = words.map(w => removeVietnameseTones(w))
+  const accent = words
+  const unaccent = words.map(w => removeVietnameseTones(w))
   await writeFile(
     path.join(__dirname, "..", 'dist', 'vietnamese_unaccent.dict'),
     Array.from(new Set(unaccent)).sort().join('\n'),
