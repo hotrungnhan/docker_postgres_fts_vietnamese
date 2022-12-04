@@ -7,6 +7,12 @@ Make Vietnamese Great Again !!!
 # Vietnamese Full Text Search Dictionary for Postgres
 Due to lack of FTS support for vietnamese in postgres. I've make this project to archive it with by collect all the dictionary in the internet, prebuild it for fastest usage.
 
+Roadmap : 
+
+* [x] guide for vietnamese fts
+* [x] using existed dictionary  (huntspell,...)
+* [ ] build our dictionary with newer,most popular keyword for faster performance
+
 For more this image is base on [postgres image](https://hub.docker.com/_/postgres). As an consequence, fts-image will share the same config and enviroment with postgres, as well.
 
 
@@ -20,20 +26,25 @@ docker run hotrungnhan/postgres:alpine
 Install full text search dictionary via run sql in database
 ```sql
 -- add dictionary
-CREATE TEXT SEARCH DICTIONARY vietnamese_hunspell (
+CREATE TEXT SEARCH DICTIONARY pg_catalog.vietnamese_hunspell (
     TEMPLATE = ispell,
-    DictFile = "vietnamese",
-    AffFile = "vietnamese",
-    Stopwords = "vietnamese"
+    DictFile = vietnamese,
+    AffFile = vietnamese,
+    Stopwords = vietnamese
+  );
+-- add dictionary for not in dict word  -> due to no steming in vietnamese
+CREATE TEXT SEARCH DICTIONARY pg_catalog.vietnamese_simple (
+    TEMPLATE = simple,
+    STOPWORDS = vietnamese
   );
 -- add configuration
-CREATE TEXT SEARCH CONFIGURATION vietnamese(
+CREATE TEXT SEARCH CONFIGURATION pg_catalog.vietnamese(
     COPY = english
 );
 -- alter parser mapping
-ALTER TEXT SEARCH CONFIGURATION vietnamese
+ALTER TEXT SEARCH CONFIGURATION pg_catalog.vietnamese
 ALTER MAPPING FOR asciiword, asciihword, hword_asciipart, word, hword, hword_part
-WITH vietnamese_hunspell;
+WITH vietnamese_hunspell,vietnamese_simple;
 
 ----------------------------------------
 ```
@@ -56,6 +67,7 @@ And
 # Reference
 ### Stop Word
 * https://github.com/stopwords/vietnamese-stopwords/blob/master/vietnamese-stopwords.txt
+* https://countwordsfree.com/stopwords
 
 ### AFF Word
 
