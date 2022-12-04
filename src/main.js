@@ -47,11 +47,11 @@ async function processStopword() {
   const unaccent = stopword
   const accent = stopword.map(w => removeVietnameseTones(w))
   await writeFile(
-    path.join(__dirname, "..", "dist", 'vietnamese_accent_only.stop'),
+    path.join(__dirname, "..", "dist", 'vietnamese_accent.stop'),
     Array.from(new Set(accent)).sort().join('\n'),
   );
   await writeFile(
-    path.join(__dirname, "..", "dist", 'vietnamese_unaccent_only.stop'),
+    path.join(__dirname, "..", "dist", 'vietnamese_unaccent.stop'),
     Array.from(new Set(accent)).sort().join('\n'),
   );
   await writeFile(
