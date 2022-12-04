@@ -71,22 +71,21 @@ async function processDict() {
 
   const tudientvw = tudientv.split("\n").map(w => JSON.parse(w).text.toLowerCase());
 
-  const unduplicated = Array.from(new Set(hunspellw.concat(tudientvw)));
-  const unaccent = unduplicated
-  const accent = unduplicated.map(w => removeVietnameseTones(w))
+  const words = hunspellw.concat(tudientvw);
+  const unaccent = words
+  const accent = words.map(w => removeVietnameseTones(w))
   await writeFile(
     path.join(__dirname, "..", 'dist', 'vietnamese_unaccent.dict'),
-    unaccent.sort().join('\n'),
+    Array.from(new Set(unaccent)).sort().join('\n'),
   );
   await writeFile(
     path.join(__dirname, "..", 'dist', 'vietnamese_accent.dict'),
-    accent.sort().join('\n'),
+    Array.from(new Set(accent)).sort().join('\n'),
   );
-}
-function generateAffix() {
-const map=[
-  ""
-]
+  await writeFile(
+    path.join(__dirname, "..", 'dist', 'vietnamese.dict'),
+    Array.from(new Set(accent.concat(unaccent))).sort().join('\n'),
+  );
 }
 processDict()
 processStopword()
