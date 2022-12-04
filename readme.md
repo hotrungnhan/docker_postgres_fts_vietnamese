@@ -19,16 +19,23 @@ docker run hotrungnhan/postgres:alpine
 ```
 Install full text search dictionary via run sql in database
 ```sql
-CREATE TEXT SEARCH DICTIONARY public.vietnamese (
-    TEMPLATE = pg_catalog.simple,
-    STOPWORDS = 'vietnamese'
-);
+-- add dictionary
+CREATE TEXT SEARCH DICTIONARY vietnamese_hunspell (
+    TEMPLATE = ispell,
+    DictFile = "vietnamese",
+    AffFile = "vietnamese",
+    Stopwords = "vietnamese"
+  );
+-- add configuration
 CREATE TEXT SEARCH CONFIGURATION vietnamese(
     COPY = english
-)
-ALTER TEXT SEARCH CONFIGURATION vietnamese 
-ALTER MAPPING FOR asciiword, word, numword, asciihword, hword,numhword, hword_asciipart ,hword_part, hword_numpart, uint, email
-WITH vietnamese;
+);
+-- alter parser mapping
+ALTER TEXT SEARCH CONFIGURATION vietnamese
+ALTER MAPPING FOR asciiword, asciihword, hword_asciipart, word, hword, hword_part
+WITH vietnamese_hunspell;
+
+----------------------------------------
 ```
 
 ## For builder
